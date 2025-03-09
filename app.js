@@ -6,7 +6,6 @@ createApp({
       shopName: 'UltraKoki',
       menuItems: [
         { id: 1, text: '首页', link: '#' },
-        { id: 2, text: '产品', link: '#products' },
         { id: 3, text: 'APP', link: 'app.html' },
         { id: 4, text: '产品手册', link: 'manual.html' },
         { id: 5, text: '联系方式', link: 'contact.html' }
