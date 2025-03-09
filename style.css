@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 更新颜色变量 */
+:root {
+    --coffee-light: #b49082;    /* 淡咖啡色 */
+    --coffee-medium: #967969;   /* 中咖啡色 */
+    --coffee-dark: #846c5b;     /* 深咖啡色 */
+    --coffee-bg: #f5f1ee;       /* 极淡的咖啡背景色 */
+}
+
+.header {
+    background-color: var(--coffee-medium);
+    color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--coffee-bg);
+}
+
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-brand {
+        margin-bottom: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.products {
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--coffee-bg);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    border: 1px solid #e0d5d0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    background-color: white;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.footer {
+    background-color: var(--coffee-medium);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.contact {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--coffee-dark);
+}
+
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    color: var(--coffee-medium);
+    width: 25px;
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: var(--coffee-medium);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-page {
+    padding: 4rem 2rem;
+    background-color: var(--coffee-bg);
+    min-height: calc(100vh - 200px);
+}
+
+.contact-map {
+    margin-top: 3rem;
+}
+
+.contact-map h3 {
+    color: var(--coffee-dark);
+    margin-bottom: 1rem;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* APP下载页面样式 */
+.app-download {
+    padding: 4rem 2rem;
+    background-color: var(--coffee-bg);
+    min-height: calc(100vh - 200px);
+}
+
+.download-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-download h2 {
+    text-align: center;
+    color: var(--coffee-dark);
+    margin-bottom: 1rem;
+}
+
+.download-subtitle {
+    text-align: center;
+    color: var(--coffee-medium);
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.download-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.platform-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--coffee-medium);
+}
+
+.download-card h3 {
+    color: var(--coffee-dark);
+    margin-bottom: 1.5rem;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--coffee-medium);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: var(--coffee-dark);
+}
+
+.app-features {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.app-features h3 {
+    color: var(--coffee-dark);
+    margin-bottom: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--coffee-medium);
+    margin-bottom: 1rem;
+}
+
+.feature-item h4 {
+    color: var(--coffee-dark);
+    margin-bottom: 0.5rem;
+}
+
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+    .download-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .qr-code {
+        width: 150px;
+        height: 150px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 产品手册页面样式 */
+.manual-page {
+    padding: 4rem 2rem;
+    background-color: var(--coffee-bg);
+    min-height: calc(100vh - 200px);
+}
+
+.manual-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.manual-container h2 {
+    text-align: center;
+    color: var(--coffee-dark);
+    margin-bottom: 3rem;
+}
+
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.manual-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manual-info h3 {
+    color: var(--coffee-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.manual-downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.language-version {
+    text-align: center;
+}
+
+.language-version h4 {
+    color: var(--coffee-medium);
+    margin-bottom: 0.5rem;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--coffee-medium);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: var(--coffee-dark);
+}
+
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+    .manual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manual-card {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UltraKoki</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1>{{ shopName }}</h1>
+        </div>
+        <ul class="nav-menu">
+          <li v-for="item in menuItems" :key="item.id">
+            <a :href="item.link">{{ item.text }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>{{ heroTitle }}</h2>
+        <p>{{ heroSubtitle }}</p>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>APP特色功能</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <i class="fas fa-link"></i>
+          <div class="product-info">
+            <h3>智能连接</h3>
+            <p>通过APP与智能手冲咖啡秤相连，随时记录咖啡的冲泡过程。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-chart-line"></i>
+          <div class="product-info">
+            <h3>数据分析</h3>
+            <p>通过比较咖啡的冲泡记录，让冲泡咖啡变的更专业。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-exchange-alt"></i>
+          <div class="product-info">
+            <h3>模式切换</h3>
+            <p>手冲教学模式和手冲专业模式随心切换，让咖啡冲泡的过程变的更加享受。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-coffee"></i>
+          <div class="product-info">
+            <h3>品味生活</h3>
+            <p>让咖啡爱好者能够更享受咖啡的美味，让喝咖啡变成轻松有趣的生活点滴。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>{{ footerText }}</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

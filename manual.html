@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品手册 - UltraKoki</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="manual-app">
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1>{{ shopName }}</h1>
+        </div>
+        <ul class="nav-menu">
+          <li v-for="item in menuItems" :key="item.id">
+            <a :href="item.link">{{ item.text }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="manual-page">
+      <div class="manual-container">
+        <h2>产品手册下载</h2>
+        <div class="manual-grid">
+          <div class="manual-card" v-for="category in manualCategories" :key="category.id">
+            <div class="manual-info">
+              <h3>{{ category.name }}</h3>
+              <div class="manual-downloads">
+                <div class="language-version">
+                  <h4>简体中文版</h4>
+                  <a :href="category.manuals.simplified" class="download-button" download>
+                    <i class="fas fa-download"></i>
+                  </a>
+                </div>
+                <div class="language-version">
+                  <h4 v-if="category.manuals.traditional">繁体中文版</h4>
+                  <h4 v-if="category.manuals.japanese">日文版</h4>
+                  <a :href="category.manuals.traditional" class="download-button" download>
+                    <i class="fas fa-download"></i>
+                  </a>
+                </div>
+                <div class="language-version">
+                  <h4>English Version</h4>
+                  <a :href="category.manuals.english" class="download-button" download>
+                    <i class="fas fa-download"></i> Download PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>{{ footerText }}</p>
+    </footer>
+  </div>
+
+  <script src="manual.js"></script>
+</body>
+
+</html>

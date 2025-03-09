@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>下载 APP - UltraKoki</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app-download">
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1>{{ shopName }}</h1>
+        </div>
+        <ul class="nav-menu">
+          <li v-for="item in menuItems" :key="item.id">
+            <a :href="item.link">{{ item.text }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="app-download">
+      <div class="download-container">
+        <h2>下载 CoffeeSecret App</h2>
+        <p class="download-subtitle">随时随地，享受完美咖啡体验</p>
+
+        <div class="download-grid">
+          <div class="download-card android">
+            <div class="platform-icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <h3>Android 版本</h3>
+            <div class="qr-code">
+              <img src="./android-app-qr.png" alt="Android下载二维码">
+            </div>
+            <a href="http://websitecdn.gangganghao.com.cn/CoffeeSecret.apk" class="download-button">
+              <i class="fas fa-download"></i> 下载 Android 版
+            </a>
+          </div>
+
+          <div class="download-card ios">
+            <div class="platform-icon">
+              <i class="fab fa-apple"></i>
+            </div>
+            <h3>iOS 版本</h3>
+            <div class="qr-code">
+              <!-- 替换为实际的iOS二维码图片 -->
+              <img src="./ios-app-qr.png" alt="iOS下载二维码">
+            </div>
+            <a href="https://apps.apple.com/hk/app/coffeesecret/id1282225433" class="download-button">
+              <i class="fab fa-app-store"></i> App Store 下载
+            </a>
+          </div>
+        </div>
+
+        <div class="app-features">
+          <h3>APP 功能特点</h3>
+          <div class="features-grid">
+            <div class="feature-item">
+              <i class="fas fa-coffee"></i>
+              <h4>智能冲泡指南</h4>
+              <p>专业的咖啡冲泡教程和计时器</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>设备远程控制</h4>
+              <p>通过蓝牙连接控制咖啡器具</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-chart-line"></i>
+              <h4>数据记录分析</h4>
+              <p>记录并分析您的冲泡数据</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-users"></i>
+              <h4>咖啡师社区</h4>
+              <p>分享心得，交流经验</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>{{ footerText }}</p>
+    </footer>
+  </div>
+
+  <script src="app-download.js"></script>
+</body>
+
+</html>
